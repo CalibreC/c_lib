@@ -11,6 +11,7 @@
 
 #include <assert.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <errno.h>
 #include <string.h>
 
@@ -22,7 +23,13 @@ int main(int argc, char **argv)
 {
     Stack_T stack;
 
-    stack = Stack_new();
+    // stack = Stack_new();
+
+    TRY
+        Stack_free(&stack);
+    FINALLY
+        printf("test.o\n");
+    END_TRY
 
     printf("printf\n");
     return 0;
