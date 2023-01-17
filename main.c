@@ -17,20 +17,19 @@
 
 #include "except.h"
 #include "arith.h"
+#include "atom.h"
 #include "stack.h"
 
 int main(int argc, char **argv)
 {
-    Stack_T stack;
+    const char *atom_str = NULL;
 
-    stack = Stack_new();
+    char str[] = {"atom string test"};
 
-    TRY
-        Stack_free(&stack);
-    FINALLY
-        printf("test.o\n");
-    END_TRY
+    atom_str = Atom_string(str);
+    // atom_str = Atom_int(4727);
 
-    printf("printf\n");
+    printf("%s", Atom_string(atom_str));
+
     return 0;
 }

@@ -1,7 +1,7 @@
 all: test
 
 test: 
-	cc -o test *.c
+	cc -g -o test *.c
 
 clean:
 	rm -rf *.o test
