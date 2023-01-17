@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 {
     Stack_T stack;
 
-    // stack = Stack_new();
+    stack = Stack_new();
 
     TRY
         Stack_free(&stack);
