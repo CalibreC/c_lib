@@ -1,7 +1,7 @@
-all: test
+all: test.out
 
-test: 
-	cc -g -o test *.c
+test.out: 
+	cc -g -o test.out *.c
 
 clean:
-	rm -rf *.o test
+	rm -rf *.o test.out

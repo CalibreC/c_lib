@@ -10,7 +10,7 @@
             "type": "cppdbg",
             "request": "launch",
              //可执行文件位置
-            "program": "${workspaceFolder}/test",
+            "program": "${workspaceFolder}/test.out",
             "args": [],
             //是否进入后暂停
             "stopAtEntry": false,

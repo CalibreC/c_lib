@@ -15,6 +15,7 @@
 #include <limits.h>
 #include "mem.h"
 
+// 数组中元素的数目
 #define NELEMS(x) ((sizeof(x)) / (sizeof((x)[0])))
 static struct atom
 {
