@@ -51,4 +51,9 @@ extern void Str_fmt(int code, va_list *app,
                     unsigned char flags[], int width, int precision);
 
 #undef T
+
+#ifdef C_LIB_TEST
+int strTest(int argc, char **argv);
+#endif
+
 #endif

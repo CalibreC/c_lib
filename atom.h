@@ -17,4 +17,8 @@ extern const char *Atom_new(const char *str, int len);
 extern const char *Atom_string(const char *str);
 extern const char *Atom_int(long n);
 
+#ifdef C_LIB_TEST
+int atomTest(int argc, char **argv);
+#endif
+
 #endif

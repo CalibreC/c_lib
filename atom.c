@@ -137,3 +137,23 @@ int Atom_length(const char *str)
     assert(0);
     return 0;
 }
+
+#ifdef C_LIB_TEST
+int atomTest(int argc, char **argv)
+{
+    const char *atom_str = NULL;
+
+    char str[] = {"atom string test"};
+    char str_bak[1024] = {0}; 
+
+    atom_str = Atom_string(str);
+    // atom_str = Atom_int(4727);
+
+    snprintf(str_bak, sizeof str_bak, "%s\n", Atom_string(atom_str));
+
+    printf("str_bak: %s", str_bak);
+    printf("atom_str: %s", Atom_string(atom_str));
+
+    return 0;
+}
+#endif

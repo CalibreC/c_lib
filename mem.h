@@ -34,5 +34,8 @@ extern void *Mem_resize(void *ptr, long nbytes,
                           (ptr) = 0))
 #define RESIZE(ptr, nbytes) ((ptr) = Mem_resize((ptr), \
                                                 (nbytes), __FILE__, __LINE__))
+#ifdef C_LIB_TEST
+int memTest(int argc, char **argv);
+#endif
 
 #endif

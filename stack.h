@@ -22,4 +22,9 @@ extern void *Stack_pop(T stk);
 extern void Stack_free(T *stk);
 
 #undef T
+
+#ifdef C_LIB_TEST
+int stackTest(int argc, char **argv);
+#endif
+
 #endif

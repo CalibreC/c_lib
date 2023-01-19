@@ -16,4 +16,9 @@
 #include "except.h"
 extern void assert(int e);
 #define assert(e) ((void)((e) || (RAISE(Assert_Failed), 0)))
+
+#ifdef C_LIB_TEST
+int assertTest(int argc, char **argv);
+#endif
+
 #endif

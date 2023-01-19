@@ -46,4 +46,9 @@ extern void Fmt_puts(const char *str, int len,
                      unsigned char flags[256], int width, int precision);
 
 #undef T
+
+#ifdef C_LIB_TEST
+int fmtTest(int argc, char **argv);
+#endif
+
 #endif

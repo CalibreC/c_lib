@@ -93,4 +93,9 @@ void Except_raise(const T *e, const char *file, int line);
     while (0);
     
 #undef T
+
+#ifdef C_LIB_TEST
+int exceptTest(int argc, char **argv);
+#endif
+
 #endif

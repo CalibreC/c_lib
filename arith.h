@@ -19,4 +19,8 @@ extern int Arith_mod(int x, int y);
 extern int Arith_ceiling(int x, int y);
 extern int Arith_floor(int x, int y);
 
+#ifdef C_LIB_TEST
+int arithTest(int argc, char **argv);
+#endif
+
 #endif

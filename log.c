@@ -8,3 +8,5 @@
  * ZMVISION Copyright (c) 2023
  * 
  */
+
+#include "log.h"

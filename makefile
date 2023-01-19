@@ -1,7 +1,9 @@
-all: test.out
+C_LIB_NAME=c_lib
 
-test.out: 
-	cc -g -o test.out *.c
+all: a.out
+
+a.out: 
+	cc -g -o a.out *.c
 
 clean:
-	rm -rf *.o test.out
+	rm -rf *.o a.out

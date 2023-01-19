@@ -1,12 +1,12 @@
 /**
  * @file main.c
  * @author fudu (fudu@zmvision.cn)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2023-01-17
- * 
+ *
  * ZMVISION Copyright (c) 2023
- * 
+ *
  */
 
 #include <assert.h>
@@ -23,20 +23,15 @@
 int main(int argc, char **argv)
 {
 
-#ifdef ATOM_STR
+#ifdef C_LIB_TEST
+    if (argc == 3 && !strcasecmp(argv[1], "test"))
     {
-        const char *atom_str = NULL;
+        if (!strcasecmp(argv[2], "atom"))
+        {
+            return atomTest(argc, argv);
+        }
 
-        char str[] = {"atom string test"};
-        char str_bak[1024] = {0}; 
-
-        atom_str = Atom_string(str);
-        // atom_str = Atom_int(4727);
-
-        snprintf(str_bak, sizeof str_bak, "%s\n", Atom_string(atom_str));
-
-        printf("str_bak: %s", str_bak);
-        printf("atom_str: %s", Atom_string(atom_str));
+        return -1; /* test not found */
     }
 #endif
 
