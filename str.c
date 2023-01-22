@@ -371,18 +371,47 @@ void Str_fmt(int code, va_list *app,
 #ifdef C_LIB_TEST
 int strTest(int argc, char **argv)
 {
-    printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
-    printf("%s %s\n", __DATE__, __TIME__);
+    printf("%s %s %s %s %d\n", __DATE__, __TIME__, __FILE__,
+           __FUNCTION__, __LINE__);
     // printf("%s %s\n", __STDC__, __cplusplus);
 
-    const char str[] = {"hello world!\n"};
-    char *str_sub = NULL;
+    const char str[] = {"Hello world!\n"};
+    const char str2[] = {"double\n"};
+    char *str_test = NULL;
+    int tmp = 0;
 
-    str_sub = Str_sub(str, 2, 7);
-    printf("%s\n", str_sub);
+    printf("---------------------------------------------\n");
 
-    str_sub = Str_dup(str, 2, 7, 2);
-    printf("%s\n", str_sub);
+    str_test = Str_sub(str, 2, 7);
+    printf("%s\n", str_test);
+
+    str_test = Str_dup(str, 2, 7, 2);
+    printf("%s\n", str_test);
+
+    str_test = Str_cat(str, 1, 3, str2, 3, 5);
+    printf("%s\n", str_test);
+
+    str_test = Str_catv(str, 1, 3, str2, 3, 5, "OMG", 1, 2, NULL);
+    printf("%s\n", str_test);
+
+    str_test = Str_reverse(str, 1, 5);
+    printf("%s\n", str_test);
+
+    //* str中的H全部被映射成h
+    str_test = Str_map(str, 1, 0, "H", "h");
+    printf("%s", str_test);
+
+    printf("---------------------------------------------\n");
+    printf("Str_pos %s", &str[Str_pos(str, -4)-1]);
+    printf("Str_len %d\n", Str_len(str, 1, 5));
+
+    tmp = Str_cmp(str, 1, 4, "OMG", 1, 2);
+    if(tmp == 0)
+        printf("Str_cmp eq\n");
+    else
+        printf("Str_cmp %s\n", tmp>0 ? "gt" : "lt");
+
+    // TODO:后续增加使用说明
 
     return 0;
 }

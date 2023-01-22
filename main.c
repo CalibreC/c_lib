@@ -32,5 +32,5 @@ int main(int argc, char **argv)
 
     printf("%s %s %d: hello world\n", __FILE__, __FUNCTION__, __LINE__);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
