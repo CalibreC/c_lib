@@ -17,7 +17,7 @@
 #include <stdarg.h>
 
 /**
- * 有可能存在内存分配
+ * 可能导致内存分配
  */
 extern char *Str_sub(const char *s, int i, int j);
 // n为dup次数
