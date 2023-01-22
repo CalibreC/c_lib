@@ -9,16 +9,7 @@
  *
  */
 
-#include <assert.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
-#include <string.h>
-
-#include "except.h"
-#include "arith.h"
-#include "atom.h"
-#include "stack.h"
+#include "main.h"
 
 int main(int argc, char **argv)
 {
@@ -30,12 +21,16 @@ int main(int argc, char **argv)
         {
             return atomTest(argc, argv);
         }
+        else if (!strcasecmp(argv[2], "str"))
+        {
+            return strTest(argc, argv);
+        }
 
         return -1; /* test not found */
     }
 #endif
 
-    printf("hello world\n");
+    printf("%s %s %d: hello world\n", __FILE__, __FUNCTION__, __LINE__);
 
     return 0;
 }

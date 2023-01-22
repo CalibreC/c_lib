@@ -14,6 +14,7 @@
 
 #include <stdarg.h>
 
+/*  */
 extern char *Str_sub(const char *s, int i, int j);
 extern char *Str_dup(const char *s, int i, int j, int n);
 extern char *Str_cat(const char *s1, int i1, int j1,
@@ -22,6 +23,7 @@ extern char *Str_catv(const char *s, ...);
 extern char *Str_reverse(const char *s, int i, int j);
 extern char *Str_map(const char *s, int i, int j,
                      const char *from, const char *to);
+
 extern int Str_pos(const char *s, int i);
 extern int Str_len(const char *s, int i, int j);
 extern int Str_cmp(const char *s1, int i1, int j1,

@@ -13,6 +13,7 @@
 #include <string.h>
 #include "assert.h"
 #include <limits.h>
+#include "stdio.h"
 #include "mem.h"
 
 // 数组中元素的数目
