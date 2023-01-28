@@ -25,6 +25,10 @@ int main(int argc, char **argv)
         {
             return strTest(argc, argv);
         }
+        else if (!strcasecmp(argv[2], "fmt"))
+        {
+            return fmtTest(argc, argv);
+        }
 
         return -1; /* test not found */
     }

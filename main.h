@@ -23,5 +23,6 @@
 #include "atom.h"
 #include "stack.h"
 #include "str.h"
+#include "fmt.h"
 
 #endif

@@ -185,6 +185,7 @@ static T cvt[256] = {
     /* 112-119 */ cvt_p, 0, 0, cvt_s, 0, cvt_u, 0, 0,
     /* 120-127 */ cvt_x, 0, 0, 0, 0, 0, 0, 0};
 char *Fmt_flags = "-+ 0";
+
 static int outc(int c, void *cl)
 {
     FILE *f = cl;
@@ -308,7 +309,7 @@ void Fmt_vfmt(int put(int c, void *cl), void *cl,
     assert(put);
     assert(fmt);
     while (*fmt)
-        if (*fmt != '%' || *++fmt == '%')
+        if (*fmt != '%' || *++fmt == '%')   /* %% */
             put((unsigned char)*fmt++, cl);
         else
         {
@@ -440,3 +441,26 @@ void Fmt_putd(const char *str, int len,
             pad(width - n, ' ');
     }
 }
+
+#ifdef C_LIB_TEST
+int fmtTest(int argc, char **argv)
+{
+    char str[1024] = {0};
+    int ret = 0;
+
+    printf("%s %s %s %s %d\n", __DATE__, __TIME__, __FILE__,
+        __FUNCTION__, __LINE__);
+    // printf("%s %s\n", __STDC__, __cplusplus);
+
+    Fmt_fmt((int (*)(int, void *))fputc, stderr, "Hello world\n");
+
+    Fmt_print("Fmt_print function\n");
+    Fmt_fprint(stdout, "Fmt_fprint function\n");
+
+    // TODO:段错误
+    ret = Fmt_sfmt(str, 1024, "Fmt_sfmt");
+    Fmt_print("%s ret: %d\n", str, ret);
+
+    return EXIT_SUCCESS;
+}
+#endif

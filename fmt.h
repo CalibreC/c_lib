@@ -27,6 +27,12 @@ extern void Fmt_fmt(int put(int c, void *cl), void *cl,
                     const char *fmt, ...);
 extern void Fmt_vfmt(int put(int c, void *cl), void *cl,
                      const char *fmt, va_list ap);
+
+/*---------------------------------------------------------------*/
+
+/**
+ * 对应C库函数printf,fprintf,sprintf,vsprintf 
+ */
 extern void Fmt_print(const char *fmt, ...);
 extern void Fmt_fprint(FILE *stream,
                        const char *fmt, ...);
@@ -34,8 +40,12 @@ extern int Fmt_sfmt(char *buf, int size,
                     const char *fmt, ...);
 extern int Fmt_vsfmt(char *buf, int size,
                      const char *fmt, va_list ap);
+
+/* 与Fmt_sfmt,Fmt_vsfmt相同 */
 extern char *Fmt_string(const char *fmt, ...);
 extern char *Fmt_vstring(const char *fmt, va_list ap);
+
+/*---------------------------------------------------------------*/
 
 extern T Fmt_register(int code, T cvt);
 extern void Fmt_putd(const char *str, int len,
